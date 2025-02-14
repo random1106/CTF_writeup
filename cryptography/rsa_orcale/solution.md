@@ -20,11 +20,11 @@ $de \equiv 1 \  (\text{mod } m)$
 
 Then the public key is $(n, d)$ and the private key is $(n, e)$. If we want to send message $a$, we encrypt it as
 
-$b \equiv a^d \  (\text{mod } m)$.
+$b \equiv a^e \  (\text{mod } m)$.
 
 The receiver can decrypt it with the private key
 
-$a = b^e \  (\text{mod } m)$.
+$a = b^d \  (\text{mod } m)$.
 
 The reason behind is Fermat's little theorem, which says for arbitrary prime number $r$, if $c$ not divisible by $r$, then $c^{(r-1)} \equiv 1 \  (\text{mod } r)$.
 
@@ -35,7 +35,7 @@ so given $d$, one has no idea how to find $e$.
 
 The idea follows from this youtube video https://www.youtube.com/watch?v=XsiwqgGourA explained by Prof. Martin Carlisle 
 
-We have a password $b$ (encrypted from an unknown $a$) that is encoded. The oracle on the server allows us to encrypt and decrypt almost anything, however, the only restriction is that we cannot decode $b$ directly to get $a$. 
+We have a password $b$ (encrypted from an unknown $a$) that is encoded. The oracle on the server allows us to encrypt and decrypt almost anything, however, the only restriction is that we cannot decrypt $b$ directly to get $a$. 
 
 So the idea is, we first encrypt \x02, the oracle should give us $g$ where
 
