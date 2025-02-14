@@ -43,7 +43,7 @@ $2^e \equiv g\  (\text{mod } n)$
 
 Then if we try to decrypt $g * b$, we will get 
 
-$(g * b)^d \equiv g^d * b^d \equiv 2a \, \, (\text{mod } n)$ (note that this works when $2a < n$, which is generally true since $n$ is so big)
+$(g * b)^d \equiv g^d * b^d \equiv 2a \ (\text{mod } n)$ (note that this works when $2a < n$, which is generally true since $n$ is so big)
 
 Finally, we divide the result $2a$ by $2$ to get the decrypted password.  
 
