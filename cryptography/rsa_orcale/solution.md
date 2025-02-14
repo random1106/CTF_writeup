@@ -16,17 +16,17 @@ $m = (p-1) * (q-1)$.
 
 Choose $0 < d < m$ that is coprime to m, i.e. $(d, m) = 1$, there exists $0 < e < m$ such that 
 
-$de \equiv 1 \,\, (mod\,\, m)$
+$de \equiv 1 \  (\text{mod } m)$
 
 Then the public key is $(n, d)$ and the private key is $(n, e)$. If we want to send message $a$, we encrypt it as
 
-$b \equiv a^d \,\, (mod\,\, m)$.
+$b \equiv a^d \  (\text{mod } m)$.
 
 The receiver can decrypt it with the private key
 
-$a = b^e \,\, (mod\,\, m)$.
+$a = b^e \  (\text{mod } m)$.
 
-The reason behind is Fermat's little theorem, which says for arbitrary prime number $r$, if $c$ not divisible by $r$, then $c^{(r-1)} \equiv 1 \,\, (mod\,\, r)$.
+The reason behind is Fermat's little theorem, which says for arbitrary prime number $r$, if $c$ not divisible by $r$, then $c^{(r-1)} \equiv 1 \  (\text{mod } r)$.
 
 This encryption cannot be decoded with the private key, because $n$ is so big, it is computationally impossible to find $p$, $q$, and thus m 
 so given $d$, one has no idea how to find $e$. 
