@@ -1,12 +1,12 @@
 Go to the login page
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 According to the hint of this CTF, we search the backup file such as .backup, .bak, ~ etc. 
 
 Adding ~ after the extension, we find some extra information
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 We see a one-line php code, after formatting it, we get
 
@@ -68,7 +68,7 @@ if (
 This seems impossible to get the flag, since we need to have the condition $yuf85e0677 == $rs35c246d5 to be false, but sha1($yuf85e0677) === sha1($rs35c246d5) to be true. Although, the sha1 collision has been proved to be true, see e.g. https://arstechnica.com/information-technology/2017/02/at-deaths-door-for-years-widely-used-sha1-function-is-now-dead/
 I don't think this is the goal of the CTF. Another way is to use burpsuite and modify our post request to make our inputs to be array, but sha1(array) will return NULL so sha1($yuf85e0677) === sha1($rs35c246d5) will become NULL === NULL, which is true. 
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 The method indeed works and we get the flag. 
 
